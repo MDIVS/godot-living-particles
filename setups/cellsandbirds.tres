@@ -1,0 +1,92 @@
+[gd_resource type="Resource" script_class="Setup" load_steps=19 format=3 uid="uid://tsaot10bk7vy"]
+
+[ext_resource type="Script" path="res://setup.gd" id="1_6wavd"]
+[ext_resource type="Script" path="res://rule.gd" id="2_50n10"]
+[ext_resource type="Script" path="res://particle_setup.gd" id="3_wjsus"]
+
+[sub_resource type="Resource" id="Resource_b72so"]
+script = ExtResource("2_50n10")
+target_group = "white"
+g = 25.0
+
+[sub_resource type="Resource" id="Resource_2b43w"]
+script = ExtResource("2_50n10")
+target_group = "nucleo"
+g = 50.0
+
+[sub_resource type="Resource" id="Resource_216ef"]
+script = ExtResource("3_wjsus")
+color = Color(1, 1, 1, 1)
+number = 100
+group_name = "white"
+rules = Array[ExtResource("2_50n10")]([SubResource("Resource_b72so"), SubResource("Resource_2b43w")])
+
+[sub_resource type="Resource" id="Resource_5gfx8"]
+script = ExtResource("2_50n10")
+target_group = "aqua"
+g = 150.0
+
+[sub_resource type="Resource" id="Resource_20uai"]
+script = ExtResource("2_50n10")
+target_group = "propulsor"
+g = -50.0
+
+[sub_resource type="Resource" id="Resource_whm77"]
+script = ExtResource("2_50n10")
+target_group = "nucleo"
+g = -200.0
+
+[sub_resource type="Resource" id="Resource_phr7l"]
+script = ExtResource("3_wjsus")
+color = Color(0, 1, 1, 1)
+number = 100
+group_name = "aqua"
+rules = Array[ExtResource("2_50n10")]([SubResource("Resource_5gfx8"), SubResource("Resource_20uai"), SubResource("Resource_whm77")])
+
+[sub_resource type="Resource" id="Resource_2xys8"]
+script = ExtResource("2_50n10")
+target_group = "propulsor"
+g = -50.0
+
+[sub_resource type="Resource" id="Resource_2oj8j"]
+script = ExtResource("2_50n10")
+target_group = "nucleo"
+g = -50.0
+
+[sub_resource type="Resource" id="Resource_jnk6v"]
+script = ExtResource("2_50n10")
+target_group = "aqua"
+g = -50.0
+
+[sub_resource type="Resource" id="Resource_tvbt6"]
+script = ExtResource("3_wjsus")
+color = Color(1, 0.498039, 0, 1)
+number = 200
+group_name = "propulsor"
+rules = Array[ExtResource("2_50n10")]([SubResource("Resource_2xys8"), SubResource("Resource_2oj8j"), SubResource("Resource_jnk6v")])
+
+[sub_resource type="Resource" id="Resource_ngadk"]
+script = ExtResource("2_50n10")
+target_group = "white"
+g = -50.0
+
+[sub_resource type="Resource" id="Resource_ow0bh"]
+script = ExtResource("2_50n10")
+target_group = "nucleo"
+g = 100.0
+
+[sub_resource type="Resource" id="Resource_rq25o"]
+script = ExtResource("2_50n10")
+target_group = "propulsor"
+g = -10.0
+
+[sub_resource type="Resource" id="Resource_8dmse"]
+script = ExtResource("3_wjsus")
+color = Color(1, 0, 1, 1)
+number = 10
+group_name = "nucleo"
+rules = Array[ExtResource("2_50n10")]([SubResource("Resource_ngadk"), SubResource("Resource_ow0bh"), SubResource("Resource_rq25o")])
+
+[resource]
+script = ExtResource("1_6wavd")
+setup = Array[ExtResource("3_wjsus")]([SubResource("Resource_216ef"), SubResource("Resource_phr7l"), SubResource("Resource_tvbt6"), SubResource("Resource_8dmse")])

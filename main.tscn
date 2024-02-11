@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://vifqk1teu87v"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_exku6"]
+[ext_resource type="Resource" uid="uid://tsaot10bk7vy" path="res://setups/cellsandbirds.tres" id="2_hqvqj"]
+[ext_resource type="PackedScene" uid="uid://bf0e518bqjopa" path="res://world_environment.tscn" id="4_ftltj"]
+[ext_resource type="Texture2D" uid="uid://58voojbpxdyr" path="res://icon.svg" id="5_6p3wh"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_exku6")
+setup = ExtResource("2_hqvqj")
+
+[node name="Icon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(85, 81)
+texture = ExtResource("5_6p3wh")
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0.372549)
+offset_left = 242.0
+offset_top = 6.0
+offset_right = 375.0
+offset_bottom = 34.0
+mouse_default_cursor_shape = 2
+text = "RESTART"
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("4_ftltj")]
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

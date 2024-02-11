@@ -1,0 +1,60 @@
+[gd_resource type="Resource" script_class="Setup" load_steps=13 format=3 uid="uid://74o5sarlshs6"]
+
+[ext_resource type="Script" path="res://setup.gd" id="1_j7m54"]
+[ext_resource type="Script" path="res://rule.gd" id="2_oiuta"]
+[ext_resource type="Script" path="res://particle_setup.gd" id="3_g8obd"]
+
+[sub_resource type="Resource" id="Resource_2cl10"]
+script = ExtResource("2_oiuta")
+target_group = "white"
+g = 3.0
+
+[sub_resource type="Resource" id="Resource_gj5j0"]
+script = ExtResource("2_oiuta")
+target_group = "orange"
+g = 10.0
+
+[sub_resource type="Resource" id="Resource_hx0wt"]
+script = ExtResource("3_g8obd")
+color = Color(1, 1, 1, 0.501961)
+number = 200
+group_name = "white"
+rules = Array[ExtResource("2_oiuta")]([SubResource("Resource_2cl10"), SubResource("Resource_gj5j0")])
+
+[sub_resource type="Resource" id="Resource_kkrrs"]
+script = ExtResource("2_oiuta")
+target_group = "orange"
+g = 10.0
+
+[sub_resource type="Resource" id="Resource_sgkm2"]
+script = ExtResource("2_oiuta")
+target_group = "red"
+g = -150.0
+
+[sub_resource type="Resource" id="Resource_1stjd"]
+script = ExtResource("3_g8obd")
+color = Color(1, 0.498039, 0, 0.501961)
+number = 200
+group_name = "orange"
+rules = Array[ExtResource("2_oiuta")]([SubResource("Resource_kkrrs"), SubResource("Resource_sgkm2")])
+
+[sub_resource type="Resource" id="Resource_f3ug1"]
+script = ExtResource("2_oiuta")
+target_group = "red"
+g = 100.0
+
+[sub_resource type="Resource" id="Resource_x5jya"]
+script = ExtResource("2_oiuta")
+target_group = "white"
+g = -35.0
+
+[sub_resource type="Resource" id="Resource_nx1ll"]
+script = ExtResource("3_g8obd")
+color = Color(1, 0, 0, 1)
+number = 3
+group_name = "red"
+rules = Array[ExtResource("2_oiuta")]([SubResource("Resource_f3ug1"), SubResource("Resource_x5jya")])
+
+[resource]
+script = ExtResource("1_j7m54")
+setup = Array[ExtResource("3_g8obd")]([SubResource("Resource_hx0wt"), SubResource("Resource_1stjd"), SubResource("Resource_nx1ll")])
